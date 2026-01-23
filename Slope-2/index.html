@@ -64,14 +64,15 @@
         }
 
         const buildUrl = "Build";
+	const version = "0.3";
         const config = {
-            dataUrl: buildUrl + "/0.2.data",
-            frameworkUrl: buildUrl + "/0.2.framework.js",
-            codeUrl: buildUrl + "/0.2.wasm",
+            dataUrl: buildUrl + "/" + version + ".data",
+            frameworkUrl: buildUrl + "/" + version + ".framework.js",
+            codeUrl: buildUrl + "/" + version + ".wasm",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "WesGoof",
             productName: "Slope-2",
-            productVersion: "0.2",
+            productVersion: version,
             showBanner: unityShowBanner,
         };
 
@@ -107,7 +108,7 @@
         }
 
         const script = document.createElement("script");
-        script.src = buildUrl + "/0.2.loader.js";
+        script.src = buildUrl + "/" + version + ".loader.js";
         script.onload = () => {
             createUnityInstance(canvas, config, (progress) => {
                 progressBarFull.style.width = 100 * progress + "%";
